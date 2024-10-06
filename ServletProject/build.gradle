@@ -25,12 +25,16 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
-	compileOnly 'org.projectlombok:lombok'
-	annotationProcessor 'org.projectlombok:lombok'
-	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	 implementation 'org.springframework.boot:spring-boot-starter-web'
+    providedRuntime 'org.apache.tomcat.embed:tomcat-embed-jasper'  // JSP 지원
+    implementation 'jakarta.servlet:jakarta.servlet-api:6.0.0'     // Jakarta Servlet API
+    implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api:3.0.0'  // JSTL API
+      providedCompile 'javax.servlet:javax.servlet-api:4.0.1' // or a version that matches your needs
+    implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl:3.0.1'  // JSTL 구현체
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
 }
 
 tasks.named('test') {
