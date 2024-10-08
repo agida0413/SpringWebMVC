@@ -10,6 +10,7 @@ import java.util.Map;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.util.StreamUtils;
 import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.bind.annotation.CookieValue;
@@ -29,7 +30,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.extern.slf4j.Slf4j;
 
-@RestController
+@Controller
 @Slf4j
 @RequestMapping("/test")
 public class PracticeController {
@@ -66,5 +67,15 @@ public class PracticeController {
 	
 		return ResponseEntity.ok().body(hasMap);
 	}
+	
+	@GetMapping("view")
+	public String test5(Model model) {
+		
+		model.addAttribute("testData","ddd");
+		model.addAttribute("loop","l");
+		
+		return "response/test/test";
+	}
+	
 	
 }
