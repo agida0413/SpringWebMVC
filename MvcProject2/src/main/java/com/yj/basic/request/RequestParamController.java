@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.method.support.HandlerMethodReturnValueHandler;
+import org.springframework.web.servlet.ViewResolver;
 
 import com.yj.basic.HelloData;
 
@@ -41,6 +43,7 @@ public class RequestParamController {
 								 @RequestParam("age") int age) throws IOException {
 		
 		log.info("uesename info ={} , age info ={}",memberName,age);
+		
 		
 		return "OK";
 	}
